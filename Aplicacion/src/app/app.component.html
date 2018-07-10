@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="col-sm-12">
+    <app-titulo
+      [titulo]="titulo"
+    >
+    </app-titulo>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-sm-1"></div>
+
+  <div class="col-sm-2"
+       *ngFor="let perfil of perfiles">
+    <app-perfil
+      [nombre]="perfil.nombrePerfil"
+      [urlImagen]="'/assets/imagenes/'+perfil.nombreImagen"
+      (seleccionoCuenta)="irACuenta($event)"
+    >
+
+    </app-perfil>
+  </div>
+
+  <div class="col-sm-1"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <app-boton
+      [nombreBoton]="nombreBoton"
+      (dioClick)="irAAdministrarPerfiles()"
+    ></app-boton>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+
+<!--
+<div class="container">
+
+  <h1>Data Bindings</h1>
+
+  <h2>Property Binding [prop]</h2>
+
+
+  <img [src]="'assets/'+nombreImagen"
+       alt=""
+       [width]="anchoImagen"
+  >
+
+  <h2>Event Bindings (event)</h2>
+
+  <button
+    (click)="cambiarTamanoImagen(10, $event)"
+    (mouseenter)="cambiarTamanoImagen(-10, $event)"
+  >
+    Aumentar tamano
+  </button>
+
+  <h1>
+    REDUCIR TAMANO
+  </h1>
+
+
+  <h1>Directivas</h1>
+
+  <h2>NgIf</h2>
+
+  <p>Hola</p>
+
+  <p *ngIf="mostrar">Mundo</p>
+
+  <h2>NgFor</h2>
+
+  <p>Primer numero {{arregloNumeros[0]}}</p>
+
+  <ul>
+    <li *ngFor="let numero of arregloNumeros;
+    let indice = index;">
+
+      {{indice + 1}}.- Mi numero es {{numero}}
+
+    </li>
+  </ul>
+
+  <h1>Interpolacion</h1>
+
+  <p>My nombre es {{nombre + ' ' + apellido}}</p>
+
+  <p>2 + 2 es igual a {{2+2}}</p>
+
+</div>
+-->
